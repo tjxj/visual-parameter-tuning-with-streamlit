@@ -21,4 +21,3 @@ def plot_roc(fpr, tpr, label=None):
     plt.xlabel('False Positive Rate')
     plt.show()
     st.pyplot()
-

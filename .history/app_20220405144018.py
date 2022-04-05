@@ -20,12 +20,12 @@ min_data_in_leaf = st.sidebar.slider(label = 'min_data_in_leaf',  min_value = 8,
 
 feature_fraction = st.sidebar.slider(label = 'feature_fraction', min_value = 0.0,
                           max_value = 1.0 ,
-                          value = 0.8,
+                          value = 0.0,
                           step = 0.1)
                           
 min_data_per_group = st.sidebar.slider(label = 'min_data_per_group', min_value = 6,
                           max_value = 289 ,
-                          value = 100,
+                          value = 32,
                           step = 1)
 
 max_cat_threshold = st.sidebar.slider(label = 'max_cat_threshold', min_value = 6,
@@ -33,15 +33,21 @@ max_cat_threshold = st.sidebar.slider(label = 'max_cat_threshold', min_value = 6
                           value = 32,
                           step = 1)
                           
-learning_rate = st.sidebar.slider(label = 'learning_rate', min_value = 0.0,
-                          max_value = 1.00,
-                          value = 0.05,
-                          step = 0.01)
+learning_rate = st.sidebar.slider(label = 'learning_rate', min_value = 8.0,
+                          max_value = 15.0,
+                          value = 10.5,
+                          step = 0.1)
 
 num_leaves = st.sidebar.slider(label = 'num_leaves',  min_value = 6,
                           max_value = 289 ,
                           value = 31,
                           step = 1)
+                          
+min_gain_to_split  = st.sidebar.slider(label = 'min_gain_to_split', min_value = 0.0,
+                          max_value = 15.0,
+                          value = 0.0,
+                          step = 0.1)
+
 
 max_bin = st.sidebar.slider(label = 'max_bin', min_value = 6,
                           max_value = 289 ,
@@ -49,11 +55,11 @@ max_bin = st.sidebar.slider(label = 'max_bin', min_value = 6,
                           step = 1)
 
 num_iterations = st.sidebar.slider(label = 'num_iterations', min_value = 8,
-                          max_value = 289,
-                          value = 100,
+                          max_value = 15,
+                          value = 10,
                           step = 1)
                                  
-st.header('LightGBM-parameter-tuning-with-streamlit')
+st.title('LightGBM-parameter-tuning-with-streamlit')
 
 
 # 加载数据
@@ -74,7 +80,7 @@ params = {'num_leaves': num_leaves, 'max_depth': max_depth,
             'feature_fraction': feature_fraction,
             'min_data_per_group': min_data_per_group, 
             'max_cat_threshold': max_cat_threshold,
-            'learning_rate':learning_rate,'num_leaves':num_leaves,
+            'learning_rate':learning_rate,'num_leaves':num_leaves,'min_gain_to_split':min_gain_to_split,
             'max_bin':max_bin,'num_iterations':num_iterations
             }
 

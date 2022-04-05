@@ -3,11 +3,12 @@ import streamlit as st
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_breast_cancer
-from sklearn.metrics import roc_auc_score,roc_curve,auc,accuracy_score,classification_report,confusion_matrix,precision_recall_curve
+from sklearn.metrics import roc_auc_score,roc_curve,auc,accuracy_score,classification_report,confusion_matrix
 import lightgbm as lgb
 import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
+
 
 def plot_roc(fpr, tpr, label=None):
     roc_auc = auc(fpr, tpr)
@@ -21,4 +22,3 @@ def plot_roc(fpr, tpr, label=None):
     plt.xlabel('False Positive Rate')
     plt.show()
     st.pyplot()
-

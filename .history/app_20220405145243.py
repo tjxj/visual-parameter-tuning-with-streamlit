@@ -53,7 +53,7 @@ num_iterations = st.sidebar.slider(label = 'num_iterations', min_value = 8,
                           value = 100,
                           step = 1)
                                  
-st.header('LightGBM-parameter-tuning-with-streamlit')
+st.title('LightGBM-parameter-tuning-with-streamlit')
 
 
 # 加载数据

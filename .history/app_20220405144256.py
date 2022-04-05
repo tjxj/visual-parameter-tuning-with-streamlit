@@ -20,7 +20,7 @@ min_data_in_leaf = st.sidebar.slider(label = 'min_data_in_leaf',  min_value = 8,
 
 feature_fraction = st.sidebar.slider(label = 'feature_fraction', min_value = 0.0,
                           max_value = 1.0 ,
-                          value = 0.8,
+                          value = 0.0,
                           step = 0.1)
                           
 min_data_per_group = st.sidebar.slider(label = 'min_data_per_group', min_value = 6,
@@ -33,7 +33,7 @@ max_cat_threshold = st.sidebar.slider(label = 'max_cat_threshold', min_value = 6
                           value = 32,
                           step = 1)
                           
-learning_rate = st.sidebar.slider(label = 'learning_rate', min_value = 0.0,
+learning_rate = st.sidebar.slider(label = 'learning_rate', min_value = 0.00,
                           max_value = 1.00,
                           value = 0.05,
                           step = 0.01)
@@ -53,7 +53,7 @@ num_iterations = st.sidebar.slider(label = 'num_iterations', min_value = 8,
                           value = 100,
                           step = 1)
                                  
-st.header('LightGBM-parameter-tuning-with-streamlit')
+st.title('LightGBM-parameter-tuning-with-streamlit')
 
 
 # 加载数据
